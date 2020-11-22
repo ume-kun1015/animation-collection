@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-prettier/recommended"
+  ],
+  "rules": {
+    "scss/dollar-variable-colon-space-after": "always",
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": ["after-single-line-comment", "first-nested"],
+        "ignore": ["after-comment"],
+      },
+    ],
+    "declaration-colon-newline-after": null,
+    "no-descending-specificity": null
+  }
+}
