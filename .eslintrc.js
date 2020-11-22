@@ -13,5 +13,26 @@ module.exports = {
   ],
   plugins: ['prettier'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'no-unused-vars': [
+      'error',
+      {
+        args: 'none',
+      },
+    ],
+    'space-before-function-paren': 'off',
+
+    'vue/component-name-in-template-casing': ['error', 'kebab-case'],
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+        },
+      },
+    ],
+
+    'nuxt/no-cjs-in-config': 'off',
+  },
 }
