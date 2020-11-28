@@ -17,6 +17,10 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  styleResources: {
+    scss: '~/assets/styles/variables/*scss',
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['~assets/styles/styles.scss'],
 
@@ -34,6 +38,7 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/eslint-module',
     '@nuxtjs/svg',
+    '@nuxtjs/style-resources',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
