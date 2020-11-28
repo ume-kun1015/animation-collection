@@ -1,6 +1,7 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
+  telemetry: false,
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -17,7 +18,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['~assets/styles/styles.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -32,10 +33,11 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/svg',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ['@nuxtjs/device'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},

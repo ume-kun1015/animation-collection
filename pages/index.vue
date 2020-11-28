@@ -1,50 +1,67 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">animation-collection</h1>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green"> Documentation </a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey"> GitHub </a>
-      </div>
-    </div>
+  <div class="index-page">
+    <h1>animations</h1>
+
+    <ul class="row">
+      <li v-for="(animation, index) in animations" :key="index" class="col-md-4">
+        <nuxt-link :to="`/${animation}`" class="card">
+          <p>{{ animation }}</p>
+        </nuxt-link>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+type Data = {
+  animations: string[]
+}
+
+export default Vue.extend({
+  data(): Data {
+    return {
+      animations: ['accordion', 'expandable-modal', 'gallery', 'popup', 'slide-menu'],
+    }
+  },
+})
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss" scoped>
+.index-page {
+  padding: 20px;
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  ul {
+    display: flex;
+    flex-wrap: wrap;
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+    li {
+      width: 30%;
+      margin: 20px;
 
-.links {
-  padding-top: 15px;
+      .card {
+        display: block;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+        transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12), 0.3s box-shadow,
+          0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+        padding: 14px 80px 18px 36px;
+        cursor: pointer;
+        text-decoration: none;
+        height: 60px;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        p {
+          font-weight: 600;
+        }
+      }
+    }
+  }
 }
 </style>
