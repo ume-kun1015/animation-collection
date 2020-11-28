@@ -34,6 +34,7 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/eslint-module',
     '@nuxtjs/svg',
+    '@nuxtjs/style-resources',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
